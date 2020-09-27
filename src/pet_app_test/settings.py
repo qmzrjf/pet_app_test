@@ -15,6 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+SECRET_KEY = 'cdasdas'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -111,13 +112,17 @@ USE_L10N = True
 
 USE_TZ = True
 
+AUTH_USER_MODEL = "pets_schedule.User"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '..', "static_content", "media")
+
 try:
-    from pet_app_test.settings_local import *  # noqa
+    from pet_app_test.local_settings import *  # noqa
 except ImportError:
-    print("settings_local.py not found!\n" * 5)
+    print("local_settings.py not found!\n" * 5)
