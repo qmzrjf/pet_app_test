@@ -56,6 +56,7 @@ class Schedule(models.Model):
     )
     name = models.CharField(max_length=50)
     date_time = models.DateTimeField()
+    status = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.pet}, {self.responsible_person}, {self.name}, {self.date_time}"
