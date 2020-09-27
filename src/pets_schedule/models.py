@@ -6,10 +6,9 @@ from uuid import uuid4
 
 
 def avatar_pet_path(instace, filename: str):
-    ext = filename.split(".")[-1]
-    f = str(uuid4())
-    filename = f"{f}.{ext}"
-    return "/".join(["avatar", "pet", str(instace.id), filename])
+    ext = filename.split('.')[-1]
+    filename = f'{instace.avatar_uuid}.{ext}'
+    return '/'.join(['avatar', 'pet', str(instace.avatar_uuid), filename])
 
 
 def avatar_user_path(instace, filename: str):
@@ -37,6 +36,7 @@ class Pet(models.Model):
     avatar = models.ImageField(
         upload_to=avatar_pet_path, null=True, blank=True, default=None
     )
+    avatar_uuid = models.UUIDField(default=uuid4, editable=False, unique=True)
 
     @property
     def years_old(self):
