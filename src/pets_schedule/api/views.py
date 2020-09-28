@@ -2,7 +2,11 @@ from rest_framework import generics
 from django.db.models import Max
 
 from pets_schedule.models import Pet, Schedule
-from pets_schedule.api.serializers import PetSerializer, PetsSerializer, ScheduleSerializer
+from pets_schedule.api.serializers import (
+    PetSerializer,
+    PetsSerializer,
+    ScheduleSerializer,
+)
 
 
 class PetsView(generics.ListAPIView):
