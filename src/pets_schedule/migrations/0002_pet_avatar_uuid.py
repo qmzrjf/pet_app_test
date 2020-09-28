@@ -7,13 +7,13 @@ import uuid
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('pets_schedule', '0001_initial'),
+        ("pets_schedule", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='pet',
-            name='avatar_uuid',
+            model_name="pet",
+            name="avatar_uuid",
             field=models.UUIDField(default=uuid.uuid4, editable=False, unique=True),
         ),
     ]

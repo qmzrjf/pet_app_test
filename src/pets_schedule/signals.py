@@ -12,7 +12,9 @@ from django.conf import settings
 def pre_save_user_avatar(sender, instance, **kwargs):
     try:
         if instance.avatar is not None:
-            shutil.rmtree(os.path.join(settings.MEDIA_ROOT, 'avatar', 'user', str(instance.id)))
+            shutil.rmtree(
+                os.path.join(settings.MEDIA_ROOT, "avatar", "user", str(instance.id))
+            )
 
     except:
         pass
@@ -22,6 +24,10 @@ def pre_save_user_avatar(sender, instance, **kwargs):
 def pre_save_pet_avatar(sender, instance, **kwargs):
     try:
         if instance.avatar is not None:
-            shutil.rmtree(os.path.join(settings.MEDIA_ROOT, 'avatar', 'pet', str(instance.avatar_uuid)))
+            shutil.rmtree(
+                os.path.join(
+                    settings.MEDIA_ROOT, "avatar", "pet", str(instance.avatar_uuid)
+                )
+            )
     except:
         pass

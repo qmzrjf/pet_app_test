@@ -17,10 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-API_PREFIX = 'api'
+API_PREFIX = "api"
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path(f'{API_PREFIX}/pet/', include('pets_schedule.api.urls')),
+    path(f"{API_PREFIX}/pet/", include("pets_schedule.api.urls")),
 ]

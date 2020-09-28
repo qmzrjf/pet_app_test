@@ -6,9 +6,9 @@ from uuid import uuid4
 
 
 def avatar_pet_path(instace, filename: str):
-    ext = filename.split('.')[-1]
-    filename = f'{instace.avatar_uuid}.{ext}'
-    return '/'.join(['avatar', 'pet', str(instace.avatar_uuid), filename])
+    ext = filename.split(".")[-1]
+    filename = f"{instace.avatar_uuid}.{ext}"
+    return "/".join(["avatar", "pet", str(instace.avatar_uuid), filename])
 
 
 def avatar_user_path(instace, filename: str):

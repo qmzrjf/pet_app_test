@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('pets_schedule', '0002_pet_avatar_uuid'),
+        ("pets_schedule", "0002_pet_avatar_uuid"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='schedule',
-            name='status',
+            model_name="schedule",
+            name="status",
             field=models.BooleanField(default=False),
         ),
     ]
